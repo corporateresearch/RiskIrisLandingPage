@@ -10,8 +10,8 @@ const companyData = {
   registeredAddress: "14859, 182-184 High Street North, London, United Kingdom, E6 2JA",
   sicCode: "74990",
   sicDescription: "Other professional, scientific and technical activities not elsewhere classified",
-  director: "Mouataz Hesham Mohamed Helmi Hassan",
-  psc: "Mouataz Hesham Mohamed Helmi Hassan",
+  director: "Mouataz Hassan",
+  psc: "Mouataz Hassan",
   jurisdiction: "England & Wales",
 }
 
