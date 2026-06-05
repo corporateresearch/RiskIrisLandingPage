@@ -3,7 +3,6 @@ import { ExternalLinkIcon } from "./icons"
 
 const companyData = {
   legalName: "RISK IRIS LIMITED",
-  tradingName: "Risk Iris",
   companyNumber: "16747142",
   incorporated: "28 September 2025",
   status: "Active",
@@ -35,10 +34,6 @@ export default function AboutCompany() {
                 <dd className="text-sm text-text-primary">{companyData.legalName}</dd>
               </div>
               <div className="h-px bg-white/5" />
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
-                <dt className="text-sm text-text-muted shrink-0 w-40">Trading as</dt>
-                <dd className="text-sm text-text-primary">{companyData.tradingName}</dd>
-              </div>
               <div className="h-px bg-white/5" />
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
                 <dt className="text-sm text-text-muted shrink-0 w-40">Company number</dt>
