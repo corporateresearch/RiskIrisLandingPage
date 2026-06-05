@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local audit artifacts
+Google-SEO-Report-riskiris.com-full.pdf
+SEO-Audit-Report-riskiris.com.txt
+/charts/
+/claude-seo/

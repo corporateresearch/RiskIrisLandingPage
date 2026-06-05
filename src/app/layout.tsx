@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Risk Iris — Screen Every Name. Defend Every Decision.",
     description:
       "Adverse media and sanctions screening platform with grounded, cited AI analysis. 11 risk categories, 10 languages, 7 sanctions lists.",
-    url: "https://riskiris.com",
+    url: "https://www.riskiris.com",
     siteName: "Risk Iris",
     locale: "en_GB",
     type: "website",
@@ -61,8 +61,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  metadataBase: new URL("https://riskiris.com"),
-  // PLACEHOLDER: Replace with actual app login URL
+  metadataBase: new URL("https://www.riskiris.com"),
+  alternates: {
+    canonical: "/",
+  },
 }
 
 export default function RootLayout({

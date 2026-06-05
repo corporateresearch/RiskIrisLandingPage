@@ -3,6 +3,9 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Terms of Service | Risk Iris",
   description: "Terms of Service for Risk Iris compliance screening platform.",
+  alternates: {
+    canonical: "/terms",
+  },
 }
 
 export default function TermsPage() {

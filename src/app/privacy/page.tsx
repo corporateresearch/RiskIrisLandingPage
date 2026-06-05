@@ -3,6 +3,9 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Privacy Policy | Risk Iris",
   description: "Privacy Policy for Risk Iris compliance screening platform.",
+  alternates: {
+    canonical: "/privacy",
+  },
 }
 
 export default function PrivacyPage() {

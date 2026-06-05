@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { BrainIcon, GlobeIcon, ShieldIcon, CheckIcon } from "./icons"
 
 const pillars = [
@@ -62,23 +63,32 @@ export default function WhyRiskIris() {
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="glass-card rounded-2xl overflow-hidden h-full flex items-center justify-center min-h-[300px] relative bg-surface-900/20">
                   {i === 0 && (
-                    <img
+                    <Image
                       src="/assets/AI_sources.png"
                       alt="AI transparency visual"
+                      width={600}
+                      height={350}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="w-full h-auto max-h-[350px] object-contain p-4"
                     />
                   )}
                   {i === 1 && (
-                    <img
+                    <Image
                       src="/assets/language_coverage_map.png"
                       alt="Language coverage map"
+                      width={600}
+                      height={400}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="w-full h-auto max-h-[400px] object-contain p-4"
                     />
                   )}
                   {i === 2 && (
-                    <img
+                    <Image
                       src="/assets/sanctions_comparison.png"
                       alt="Sanctions list comparison"
+                      width={600}
+                      height={350}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="w-full h-auto max-h-[350px] object-contain p-4"
                     />
                   )}

@@ -1,15 +1,16 @@
 "use client"
 
+import Image from "next/image"
 import { ArrowRightIcon } from "./icons"
 import WaitlistForm from "./WaitlistForm"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-16">
       <div className="absolute inset-0 bg-grid" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-glow rounded-full" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center mb-12">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-sm text-violet-300 mb-8">
           <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
           Pre-launch — join the founding cohort
@@ -46,8 +47,19 @@ export default function Hero() {
         </div>
       </div>
 
-      { /* PLACEHOLDER: Replace with product screenshot — search results view */ }
-      { /* PLACEHOLDER: Replace with product screenshot — AI analysis panel */ }
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full">
+        <div className="glass-card rounded-2xl p-1.5 border border-white/10 shadow-2xl shadow-violet-500/10">
+          <Image
+            src="/assets/search_results_view.png"
+            alt="Risk Iris Compliance Screening Dashboard"
+            width={1200}
+            height={675}
+            priority
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="rounded-xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
     </section>
   )
 }

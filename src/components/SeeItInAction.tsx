@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { DocumentIcon, ArrowRightIcon } from "./icons"
 
 export default function SeeItInAction() {
@@ -38,9 +39,12 @@ export default function SeeItInAction() {
               className="glass-card rounded-2xl overflow-hidden flex flex-col group border border-white/5 hover:border-violet-500/20 transition-all duration-300"
             >
               <div className="aspect-video w-full overflow-hidden bg-surface-900/50 relative border-b border-white/5">
-                <img
+                <Image
                   src={item.image}
                   alt={item.label}
+                  width={600}
+                  height={337}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
