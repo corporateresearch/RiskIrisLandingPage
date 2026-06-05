@@ -29,7 +29,7 @@ export default function SeeItInAction() {
               image: "/assets/ai_analysis_panel.png",
             },
             {
-              label: "David Ferrera Risk Report",
+              label: "Bribery & Corruption Risk Report",
               desc: "Complete compliance profile highlighting watchlist flags and adverse media",
               image: "/assets/david_ferrera_report_monitor.png",
             },
