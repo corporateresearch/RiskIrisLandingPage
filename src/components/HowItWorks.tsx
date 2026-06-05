@@ -11,7 +11,7 @@ const steps = [
   {
     number: "02",
     title: "Search & auto-flag",
-    description: "Platform scans sanctions lists and adverse media across 11 categories and 10 languages. Fuzzy matching catches name variants.",
+    description: "Platform scans sanctions lists and adverse media across 11 categories and 11 languages. Fuzzy matching catches name variants.",
   },
   {
     number: "03",

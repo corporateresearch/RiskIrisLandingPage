@@ -21,7 +21,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Risk Iris — Screen Every Name. Defend Every Decision.",
   description:
-    "Risk Iris screens adverse media across 11 risk categories and 10 languages, screens against 7 major sanctions lists, and produces grounded, cited AI summaries your compliance team can defend.",
+    "Risk Iris screens adverse media across 11 risk categories and 11 languages, screens against 7 major sanctions lists, and produces grounded, cited AI summaries your compliance team can defend.",
   keywords: [
     "sanctions screening",
     "adverse media screening",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Risk Iris — Screen Every Name. Defend Every Decision.",
     description:
-      "Adverse media and sanctions screening platform with grounded, cited AI analysis. 11 risk categories, 10 languages, 7 sanctions lists.",
+      "Adverse media and sanctions screening platform with grounded, cited AI analysis. 11 risk categories, 11 languages, 7 sanctions lists.",
     url: "https://www.riskiris.com",
     siteName: "Risk Iris",
     locale: "en_GB",

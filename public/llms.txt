@@ -5,7 +5,7 @@ Risk Iris is a professional, high-recall compliance intelligence and RegTech pla
 ## Core Capabilities
 
 - **Watchlist & Sanctions Screening**: Queries across 7 major sanctions lists (OFAC, EU, UN, HMT, Interpol, and others) in a single unified search, using fuzzy matching to catch name variants.
-- **Adverse Media Screening**: Screens global open-source media across 11 risk categories and 10 languages (including English, Arabic, Chinese, Russian, French, Spanish, German, Portuguese, Turkish, and Urdu).
+- **Adverse Media Screening**: Screens global open-source media across 11 risk categories and 11 languages (including English, Arabic, Chinese, Russian, French, Spanish, German, Portuguese, Turkish, and Urdu).
 - **Grounded AI Triage**: Provides transparent AI triage summaries with inline `[Source N]` citations linking directly to the source articles, enabling compliance officers to audit and defend every decision.
 - **Data Privacy & Self-Hosting**: Built for strict data residency. It runs in-process with no third-party search brokers exposing query history. The platform supports self-hosted deployments.
 - **Audit-Ready Reports**: Generates professional, native PDF risk summaries with visual category badges and full translation mapping.

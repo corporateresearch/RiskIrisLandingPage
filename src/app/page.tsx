@@ -64,7 +64,7 @@ export default function Home() {
         "@id": "https://www.riskiris.com/#webpage",
         "url": "https://www.riskiris.com",
         "name": "Risk Iris — Screen Every Name. Defend Every Decision.",
-        "description": "Risk Iris screens adverse media across 11 risk categories and 10 languages.",
+        "description": "Risk Iris screens adverse media across 11 risk categories and 11 languages.",
         "isPartOf": { "@id": "https://www.riskiris.com/#website" }
       },
       {

@@ -14,7 +14,7 @@ const pillars = [
     title: "11 Languages, One Platform",
     description:
       "Adverse media screening across English, Arabic (RTL), Chinese (CJK), French, Spanish, Russian, Portuguese, German, Turkish, and Urdu. Reports render natively in each script — no broken layouts, no missing characters.",
-    details: ["Full RTL support for Arabic", "CJK character rendering", "Native PDF output in all 10 languages"],
+    details: ["Full RTL support for Arabic", "CJK character rendering", "Native PDF output in all 11 languages"],
   },
   {
     icon: ShieldIcon,

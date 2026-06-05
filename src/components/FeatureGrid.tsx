@@ -4,7 +4,7 @@ const features = [
   {
     icon: SearchIcon,
     title: "Adverse Media Screening",
-    description: "Searches 11 risk categories across 10 languages simultaneously — no more stitching together multiple tools.",
+    description: "Searches 11 risk categories across 11 languages simultaneously — no more stitching together multiple tools.",
   },
   {
     icon: BrainIcon,
@@ -29,7 +29,7 @@ const features = [
   {
     icon: DocumentIcon,
     title: "Multilingual PDF Report",
-    description: "One-click branded report in 10 languages including Arabic (RTL) and CJK. Drop it straight into case files.",
+    description: "One-click branded report in 11 languages including Arabic (RTL) and CJK. Drop it straight into case files.",
   },
 ]
 
