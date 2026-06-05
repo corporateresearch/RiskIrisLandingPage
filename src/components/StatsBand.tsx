@@ -4,7 +4,7 @@ export default function StatsBand() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "7", label: "Official lists" },
+            { value: "Worldwide", label: "Official lists" },
             { value: "11", label: "Risk categories" },
             { value: "11", label: "Languages" },
             { value: "Minutes", label: "not hours" },
