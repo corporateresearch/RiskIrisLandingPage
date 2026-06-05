@@ -10,8 +10,6 @@ const companyData = {
   registeredAddress: "14859, 182-184 High Street North, London, United Kingdom, E6 2JA",
   sicCode: "74990",
   sicDescription: "Other professional, scientific and technical activities not elsewhere classified",
-  director: "Mouataz Hassan",
-  psc: "Mouataz Hassan",
   jurisdiction: "England & Wales",
 }
 
@@ -65,10 +63,6 @@ export default function AboutCompany() {
                 <dd className="text-sm text-text-primary">{companyData.sicCode} — {companyData.sicDescription}</dd>
               </div>
               <div className="h-px bg-white/5" />
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
-                <dt className="text-sm text-text-muted shrink-0 w-40">Director</dt>
-                <dd className="text-sm text-text-primary">{companyData.director}</dd>
-              </div>
               <div className="h-px bg-white/5" />
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
                 <dt className="text-sm text-text-muted shrink-0 w-40">Jurisdiction</dt>
