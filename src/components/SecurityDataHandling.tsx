@@ -54,7 +54,7 @@ export default function SecurityDataHandling() {
                 </div>
                 <div>
                   <span className="text-sm font-medium">In-process search</span>
-                  <p className="text-xs text-text-muted">SearXNG — no third-party brokers</p>
+                  <p className="text-xs text-text-muted">In-house search engine — no third-party brokers</p>
                 </div>
               </div>
               <div className="flex justify-center">
