@@ -5,10 +5,11 @@ import Link from "next/link"
 import { MenuIcon, CloseIcon } from "./icons"
 
 const navLinks = [
-  { href: "/#features", label: "Features" },
   { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#features", label: "Features" },
+  { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export default function Nav() {

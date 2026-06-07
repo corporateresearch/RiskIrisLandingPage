@@ -50,8 +50,8 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full">
         <div className="glass-card rounded-2xl p-1.5 border border-white/10 shadow-2xl shadow-violet-500/10">
           <Image
-            src="/assets/search_results_view.png"
-            alt="Risk Iris Compliance Screening Dashboard"
+            src="/assets/screenshot.png"
+            alt="Risk Iris Sanctions Intelligence Dashboard"
             width={1200}
             height={675}
             priority

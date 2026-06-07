@@ -10,10 +10,10 @@ import WhyRiskIris from "@/components/WhyRiskIris"
 import SecurityDataHandling from "@/components/SecurityDataHandling"
 import SeeItInAction from "@/components/SeeItInAction"
 import StatsBand from "@/components/StatsBand"
-import AboutCompany from "@/components/AboutCompany"
+
 import EarlyAccessBand from "@/components/EarlyAccessBand"
-import FAQ from "@/components/FAQ"
-import Contact from "@/components/Contact"
+
+
 import FinalCTA from "@/components/FinalCTA"
 
 export const metadata: Metadata = {
@@ -166,10 +166,10 @@ export default function Home() {
       <SecurityDataHandling />
       <SeeItInAction />
       <StatsBand />
-      <AboutCompany />
+
       <EarlyAccessBand />
-      <FAQ />
-      <Contact />
+
+
       <FinalCTA />
     </main>
   )

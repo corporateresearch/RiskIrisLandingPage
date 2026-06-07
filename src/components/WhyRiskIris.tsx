@@ -84,7 +84,7 @@ export default function WhyRiskIris() {
                   )}
                   {i === 2 && (
                     <Image
-                      src="/assets/sanctions_comparison.png"
+                      src="/assets/screenshot.png"
                       alt="Sanctions list comparison"
                       width={600}
                       height={350}

@@ -5,8 +5,8 @@ const footerLinks = {
   Product: [
     { label: "Features", href: "/#features" },
     { label: "How It Works", href: "/#how-it-works" },
-    { label: "FAQ", href: "/#faq" },
-    { label: "Contact", href: "/#contact" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Contact", href: "/contact" },
   ],
   Resources: [
     { label: "Documentation", href: "#" },
@@ -16,8 +16,8 @@ const footerLinks = {
     { label: "Privacy Policy", href: "/privacy" },
   ],
   Company: [
-    { label: "About", href: "/#about" },
-    { label: "Contact", href: "/#contact" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
     { label: "Companies House", href: "https://find-and-update.company-information.service.gov.uk/company/16747142" },
   ],
 }
