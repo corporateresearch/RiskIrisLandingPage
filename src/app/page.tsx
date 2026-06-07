@@ -11,7 +11,6 @@ import SecurityDataHandling from "@/components/SecurityDataHandling"
 import SeeItInAction from "@/components/SeeItInAction"
 import StatsBand from "@/components/StatsBand"
 
-import EarlyAccessBand from "@/components/EarlyAccessBand"
 
 
 import FinalCTA from "@/components/FinalCTA"
@@ -167,7 +166,6 @@ export default function Home() {
       <SeeItInAction />
       <StatsBand />
 
-      <EarlyAccessBand />
 
 
       <FinalCTA />
