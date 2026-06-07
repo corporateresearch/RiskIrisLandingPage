@@ -5,7 +5,7 @@ import WaitlistForm from "./WaitlistForm"
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="waitlist" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-violet-600/10 via-transparent to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-glow rounded-full" />
 
