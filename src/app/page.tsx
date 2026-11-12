@@ -1,4 +1,4 @@
-import { AnalystScene } from "@/components/scenes/AnalystScene"
+import { AnalystVideo } from "@/components/scenes/AnalystVideo"
 import { BenefitsScene } from "@/components/scenes/BenefitsScene"
 import { ClosingHeadline, ClosingPulse } from "@/components/scenes/ClosingScene"
 import { FinesScene } from "@/components/scenes/FinesScene"
@@ -82,7 +82,7 @@ export default function HomePage() {
               </div>
               <p className="mt-3 text-xs text-muted">{problem.example.note}</p>
             </div>
-            <AnalystScene />
+            <AnalystVideo />
           </div>
 
           <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
