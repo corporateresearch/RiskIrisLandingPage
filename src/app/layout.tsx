@@ -1,83 +1,73 @@
-import type { Metadata } from "next"
-import { Sora, Outfit } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Outfit, Sora } from "next/font/google"
 import "./globals.css"
-import Nav from "@/components/Nav"
-import Footer from "@/components/Footer"
+import { SiteFooter } from "@/components/layout/SiteFooter"
+import { SiteHeader } from "@/components/layout/SiteHeader"
+import { JsonLd } from "@/lib/JsonLd"
+import { socialMetadata } from "@/lib/metadata"
+import { absoluteUrl, counts, site } from "@/lib/site"
 
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  display: "swap",
-  weight: ["400", "600", "700"],
-})
+// Only the weights the design uses: headings 600; body 400, 500 and 600.
+const heading = Sora({ subsets: ["latin"], weight: ["600"], variable: "--face-heading", display: "swap" })
+const body = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--face-body", display: "swap" })
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-})
+const description = `${site.name} runs adverse media and sanctions screening on any company or person, in ${counts.languages} languages and across ${counts.riskCategories} risk categories, with a source link for every finding.`
 
 export const metadata: Metadata = {
-  title: "Risk Iris — Screen Every Name. Defend Every Decision.",
-  description:
-    "Risk Iris screens adverse media across 11 risk categories and 11 languages, screens against 7 major sanctions lists, and produces grounded, cited AI summaries your compliance team can defend.",
-  keywords: [
-    "sanctions screening",
-    "adverse media screening",
-    "KYC",
-    "AML",
-    "due diligence",
-    "compliance",
-    "risk intelligence",
-    "AI screening",
-    "watchlist screening",
-  ],
-  openGraph: {
-    title: "Risk Iris — Screen Every Name. Defend Every Decision.",
-    description:
-      "Adverse media and sanctions screening platform with grounded, cited AI analysis. 11 risk categories, 11 languages, 7 sanctions lists.",
-    url: "https://www.riskiris.com",
-    siteName: "Risk Iris",
-    locale: "en_GB",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Risk Iris — Screening intelligence platform",
-      },
-    ],
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} | Adverse media and sanctions screening`,
+    template: `%s | ${site.name}`,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Risk Iris — Screen Every Name. Defend Every Decision.",
-    description:
-      "Adverse media and sanctions screening platform with grounded, cited AI analysis.",
-    images: ["/og-image.png"],
+  description,
+  applicationName: site.name,
+  alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: site.logo.icon, type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  metadataBase: new URL("https://www.riskiris.com"),
-  alternates: {
-    canonical: "/",
+  ...socialMetadata(`${site.name} | Adverse media and sanctions screening`, description, "/"),
+  robots: { index: true, follow: true },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": absoluteUrl("/#organization"),
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  logo: absoluteUrl(site.logo.wordmarkOnLight),
+  email: site.email,
+  foundingDate: site.company.incorporated,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.company.registeredOffice[0],
+    addressLocality: site.company.registeredOffice[1],
+    postalCode: site.company.registeredOffice[2],
+    addressCountry: site.company.countryCode,
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sora.variable} ${outfit.variable}`}>
-      <body className="bg-surface-900 text-text-primary antialiased">
-        <Nav />
-        {children}
-        <Footer />
+    <html lang="en-GB" className={`${heading.variable} ${body.variable}`} data-scroll-behavior="smooth">
+      <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-on-brand"
+        >
+          Skip to main content
+        </a>
+        <SiteHeader />
+        <main id="main">{children}</main>
+        <SiteFooter />
+        <JsonLd data={organization} />
       </body>
     </html>
   )
