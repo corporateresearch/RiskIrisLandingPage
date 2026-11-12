@@ -24,8 +24,8 @@ A rename plus a palette swap is a two-file change.
 
 1. **`src/lib/site.ts`** holds the brand name, legal name, domain, email,
    company details, booking URL and logo paths. It also holds the product
-   facts (languages, risk categories, sanctions lists) and pricing, so no
-   number is typed twice.
+   facts (languages, risk categories, sanctions lists), so no number is
+   typed twice.
 2. **`src/app/globals.css`** holds the brand colours in the `@theme` block.
 
 Everything else derives from those two files: page copy, metadata, the
@@ -43,7 +43,7 @@ Two things sit outside the repository and need the same update:
 
 ```
 src/
-  lib/site.ts            Brand, company details, facts, pricing, feature flags
+  lib/site.ts            Brand, company details, product facts, app links
   lib/theme.ts           Reads colour tokens for generated images
   lib/brand-image.tsx    Shared pieces for the generated wordmark and icons
   lib/forms/             Validation rules, rate limit, shared POST handler
@@ -83,7 +83,6 @@ Do not add artwork that is not a genuine capture of the product.
 | `RESEND_API_KEY` | For notifications | API key for the email provider |
 | `NOTIFY_FROM` | For notifications | Sender, on a domain verified with the email provider |
 | `NEXT_PUBLIC_APP_URL` | No | Product app URL. Shows "Log in" in the navigation and "Sign up" as a secondary link |
-| `NEXT_PUBLIC_SHOW_PRICING` | No | `true` shows the pricing section. Default: hidden |
 
 Without the Supabase variables the forms still render. A submission returns
 an error and the visitor is shown the direct booking link and the email
@@ -139,12 +138,6 @@ email provider's HTTP API.
 
 `/api/notify` rejects requests without the correct secret and ignores
 events for any other table.
-
-## Pricing
-
-The pricing section is built from `pricing` in `src/lib/site.ts` and is
-hidden by default. Set `NEXT_PUBLIC_SHOW_PRICING=true` to show it on the
-home page and add "Pricing" to the navigation.
 
 ## Press releases
 

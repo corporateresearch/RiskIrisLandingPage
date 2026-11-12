@@ -1,7 +1,7 @@
 /**
  * Single source of truth for everything that changes on a rename:
  * brand name, legal name, domain, email, company details, logo paths and
- * the booking URL. Product facts and pricing live here too, so no number
+ * the booking URL. Product facts live here too, so no number
  * is ever retyped in a component.
  *
  * Brand colours are the other half of a rename: see the @theme block in
@@ -16,7 +16,7 @@ export const site = {
   legalName: "RISK IRIS LIMITED",
   domain,
   url: `https://www.${domain}`,
-  email: `info@${domain}`,
+  email: "mouataz@riskiris.dev",
   bookingUrl: "https://calendar.app.google/2dMF8t33nKf367yN7",
   locale: "en_GB",
   company: {
@@ -106,21 +106,6 @@ export const sanctionsListLabels = facts.sanctionsLists.map((list) =>
   list.region ? `${list.name} (${list.region})` : list.name,
 )
 
-/** Pricing is hidden unless NEXT_PUBLIC_SHOW_PRICING is "true". */
-export const SHOW_PRICING = process.env.NEXT_PUBLIC_SHOW_PRICING === "true"
-
-export const pricing = {
-  label: "Indicative pricing",
-  currency: "£",
-  period: "month",
-  extraSearchPrice: 3,
-  tiers: [
-    { name: "Starter", price: 75, searches: "10 searches", users: "1 user", extras: [] },
-    { name: "Professional", price: 229, searches: "100 searches", users: "1 user", extras: [] },
-    { name: "Team", price: 949, searches: "Unlimited searches", users: "2 users", extras: ["Priority support"] },
-  ],
-} as const
-
 /** Product app links appear only when NEXT_PUBLIC_APP_URL is set. */
 const appBase = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/+$/, "") || null
 
@@ -141,7 +126,6 @@ export const routes = {
   platform: "/#platform",
   tour: "/#product-tour",
   security: "/#security",
-  pricing: "/#pricing",
 } as const
 
 /**

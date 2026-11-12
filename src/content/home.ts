@@ -190,8 +190,3 @@ export const finalCta = {
   cta: "Book a demo",
   trustLine: hero.trustLine,
 }
-
-export const pricingSection = {
-  eyebrow: "Pricing",
-  title: "Plans",
-}

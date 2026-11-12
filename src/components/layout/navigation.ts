@@ -1,11 +1,10 @@
-import { appLinks, companiesHouseUrl, routes, SHOW_PRICING } from "@/lib/site"
+import { appLinks, companiesHouseUrl, routes } from "@/lib/site"
 
 export type NavLink = { label: string; href: string; external?: boolean }
 
 export const primaryNav: NavLink[] = [
   { label: "How it works", href: routes.howItWorks },
   { label: "Platform", href: routes.platform },
-  ...(SHOW_PRICING ? [{ label: "Pricing", href: routes.pricing }] : []),
   { label: "FAQ", href: routes.faq },
   { label: "About", href: routes.about },
 ]
@@ -21,7 +20,6 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
       { label: "Platform", href: routes.platform },
       { label: "Product tour", href: routes.tour },
       { label: "Security and data", href: routes.security },
-      ...(SHOW_PRICING ? [{ label: "Pricing", href: routes.pricing }] : []),
       { label: "FAQ", href: routes.faq },
     ],
   },
