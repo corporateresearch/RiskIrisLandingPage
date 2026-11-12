@@ -10,7 +10,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-subtle">
       <Container className="py-12 lg:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr]">
           <div>
             <Link href={routes.home} aria-label={`${site.name} home`} className="inline-block">
               <Wordmark />
@@ -26,6 +26,10 @@ export function SiteFooter() {
               <br />
               <a href={`mailto:${site.email}`} className="link">
                 {site.email}
+              </a>
+              <br />
+              <a href={site.phone.href} className="link">
+                {site.phone.display}
               </a>
             </address>
           </div>

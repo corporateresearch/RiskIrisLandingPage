@@ -1,13 +1,7 @@
-import { counts, facts, formatDate, registeredOfficeLine, sanctionsListLabels, site } from "@/lib/site"
+import { counts, formatDate, nameVariants, registeredOfficeLine, site } from "@/lib/site"
 
-export type FaqItem = { question: string; answer: string; featured?: boolean }
+export type FaqItem = { question: string; answer: string }
 export type FaqGroup = { title: string; items: FaqItem[] }
-
-const lists = `${sanctionsListLabels.slice(0, -1).join(", ")} and ${sanctionsListLabels.at(-1)}`
-const languages = `${facts.languages.slice(0, -1).join(", ")} and ${facts.languages.at(-1)}`
-const categories = `${facts.riskCategories.slice(0, -1).join(", ")} and ${facts.riskCategories.at(-1)}`
-  .toLowerCase()
-  .replace("esg", "ESG")
 
 /** Answers are plain text so the same content feeds the page and the FAQPage structured data. */
 export const faqGroups: FaqGroup[] = [
@@ -16,8 +10,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         question: `What does ${site.name} do?`,
-        answer: `${site.name} runs adverse media screening and sanctions and watchlist screening on any company or person. It searches in ${counts.languages} languages across ${counts.riskCategories} risk categories, and uses AI analysis to produce a summary of findings, a timeline and event details, with a source link for every finding.`,
-        featured: true,
+        answer: `${site.name} checks the companies and people you do business with for negative news and sanctions, in ${counts.languages} languages and across ${counts.riskCategories} risk categories. It is built for the research that happens before a contract is signed.`,
       },
       {
         question: "Who is it for?",
@@ -25,57 +18,62 @@ export const faqGroups: FaqGroup[] = [
           "Consultancies, due diligence providers, boutique investigation firms and small in-house compliance teams that research companies and people across countries and languages.",
       },
       {
-        question: "Which languages are covered?",
-        answer: `${counts.languages} languages: ${languages}.`,
-        featured: true,
-      },
-      {
-        question: "Which risk categories are covered?",
-        answer: `${counts.riskCategories} categories: ${categories}.`,
+        question: "What problem does it solve?",
+        answer:
+          "A search on one company can return thousands of supposedly negative articles. Most are irrelevant, and the ones that matter are easy to miss. The product is built to cut the time spent on the irrelevant ones without losing the important ones.",
       },
       {
         question: "Does it handle different spellings of the same name?",
-        answer: `Yes. The platform recognises spelling and transliteration variants of names. For example, ${facts.nameVariants
+        answer: `Yes. Spelling and transliteration variants of a name are recognised. For example, ${nameVariants
           .map((entry) => entry.variants.join(" and "))
-          .join(", or ")} are treated as variants of the same name.`,
+          .join(", or ")} are searched as the same name.`,
+      },
+      {
+        question: "Can I see exactly how it works?",
+        answer: `Yes, on a demo call. We show the product live on a name you choose. We do not publish the detail of how it works on this website.`,
       },
     ],
   },
   {
-    title: "Sanctions screening",
+    title: "AI and evidence",
     items: [
-      {
-        question: "Which sanctions lists are checked?",
-        answer: `The platform checks ${counts.sanctionsLists} official sanctions lists: ${lists}.`,
-        featured: true,
-      },
-      {
-        question: "Can I screen a person as well as a company?",
-        answer: "Yes. Adverse media screening and sanctions screening both work on any company or person.",
-      },
-    ],
-  },
-  {
-    title: "Analysis and evidence",
-    items: [
-      {
-        question: "What does the AI analysis give me?",
-        answer:
-          "A summary of findings, a timeline, event details, and a source link for every finding. The analysis organises the evidence so it is quicker to review. It does not replace the review.",
-      },
       {
         question: `Does ${site.name} give a risk score?`,
         answer:
-          "No. There are no black-box risk scores. The platform finds and organises the evidence, and your analyst makes the call.",
-        featured: true,
+          "No, by design. A score cannot explain why it is high, medium or low, and an analyst cannot defend it. The product finds and organises the evidence, and the analyst makes the call.",
       },
       {
-        question: "Can I check what the analysis says?",
-        answer: "Yes. Every finding links to its source, so you can read the original and judge it for yourself.",
+        question: "How do you deal with AI hallucinations?",
+        answer:
+          "Every finding links to the source it came from, so anything the AI says can be checked against the original. The analyst can change or remove any AI statement, and the report can be edited before it is used.",
+      },
+      {
+        question: "Does a result mean the person or company did something wrong?",
+        answer:
+          "No. Results are signals for a person to review, not verdicts. A sanctions match is a possible match until it is checked. Negative news can describe an allegation that was never proven.",
       },
       {
         question: "Can I act on the results without reviewing them?",
         answer: `No. ${site.name} is a screening tool. All results require human review before any action, and the platform must not be the sole basis for a decision.`,
+      },
+      {
+        question: "What do I get at the end?",
+        answer:
+          "A report of the findings with their source links, which you can export as a PDF or as an editable Word document.",
+      },
+    ],
+  },
+  {
+    title: "Why now",
+    items: [
+      {
+        question: "Why does this matter more than it used to?",
+        answer:
+          "Regulators in the United Kingdom and the Middle East are raising expectations for third-party checks and for documenting the reasoning behind them. Recent penalties for sanctions, bribery and third-party failures run from hundreds of thousands to more than a billion dollars. The home page lists examples with links to each regulator's announcement.",
+      },
+      {
+        question: "Which regions do you focus on?",
+        answer: "The United Kingdom and the Middle East.",
       },
     ],
   },
@@ -84,17 +82,16 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         question: "How do I see the product?",
-        answer: `Book a ${site.demo.durationMinutes}-minute demo. We will run a search live and walk you through the results, the analysis and the exported report. There is no commitment.`,
-        featured: true,
+        answer: `Book a ${site.demo.durationMinutes}-minute demo. Bring a name you want to check and we will run it live.`,
       },
       {
-        question: "Can I sign up without a demo?",
+        question: "Can I sign up straight away?",
         answer:
-          "Yes. The product is working today and has self-serve sign-up. A demo is the quickest way to see whether it fits your work before you start.",
+          "The product is live. Access is granted after onboarding checks on each client, so the first step is a demo call.",
       },
       {
         question: "What does it cost?",
-        answer: "We will go through pricing on the demo call, based on how many searches and users you need.",
+        answer: "We go through pricing on the demo call, based on how many searches and users you need.",
       },
     ],
   },
@@ -111,14 +108,13 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         question: "What happens to the details I submit on this website?",
-        answer: `We use them to arrange your demo or answer your message, and for nothing else. We do not sell them. You can ask us to delete them at any time by emailing ${site.email}. The privacy policy has the full detail.`,
+        answer: `We use them to arrange your demo and for nothing else. We do not sell them. You can ask us to delete them at any time by emailing ${site.email}. The privacy policy has the full detail.`,
       },
       {
         question: "Does this website use cookies?",
-        answer: "No. This website sets no cookies and loads no analytics or tracking scripts.",
+        answer:
+          "No. This website sets no cookies and loads no analytics or tracking scripts. It remembers your light or dark theme choice in your browser only.",
       },
     ],
   },
 ]
-
-export const featuredFaq = faqGroups.flatMap((group) => group.items).filter((item) => item.featured)

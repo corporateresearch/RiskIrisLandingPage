@@ -8,13 +8,13 @@ export function Wordmark({ onInk = false, className }: { onInk?: boolean; classN
       <span
         aria-hidden="true"
         className={cn(
-          "inline-flex h-8 w-8 items-center justify-center rounded-sm font-heading text-xs font-semibold tracking-tight",
+          "inline-flex h-8 w-8 items-center justify-center rounded-sm font-heading text-xs font-bold tracking-tight",
           onInk ? "bg-on-ink text-ink" : "bg-brand text-on-brand",
         )}
       >
         {monogram}
       </span>
-      <span className={cn("font-heading text-lg font-semibold tracking-tight", onInk ? "text-on-ink" : "text-heading")}>
+      <span className={cn("font-heading text-lg font-bold tracking-tight", onInk ? "text-on-ink" : "text-heading")}>
         {site.name}
       </span>
     </span>

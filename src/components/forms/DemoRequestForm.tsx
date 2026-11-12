@@ -126,7 +126,7 @@ export function DemoRequestForm() {
       </p>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <Button type="submit" size="lg" disabled={status === "submitting"}>
+        <Button type="submit" size="lg" variant="accent" disabled={status === "submitting"}>
           {status === "submitting" ? "Sending…" : "Request a demo"}
         </Button>
         <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="link text-sm font-medium">

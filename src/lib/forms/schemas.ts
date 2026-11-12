@@ -27,13 +27,6 @@ export const demoRequestSchema = {
   note: { label: "Note", max: 1000, required: false },
 } as const satisfies Record<string, FieldRule>
 
-export const contactSchema = {
-  name: { label: "Name", max: 100, required: true },
-  email: { label: "Email", max: 254, required: true, type: "email" },
-  subject: { label: "Subject", max: 150, required: false },
-  message: { label: "Message", max: 2000, required: true },
-} as const satisfies Record<string, FieldRule>
-
 export type Schema = Record<string, FieldRule>
 export type Values<S extends Schema> = { [K in keyof S]: string | null }
 export type FieldErrors<S extends Schema> = Partial<Record<keyof S, string>>

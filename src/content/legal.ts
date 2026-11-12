@@ -11,11 +11,11 @@ export type LegalDocument = {
   sections: LegalSection[]
 }
 
-const contactBlock = `${site.legalName}, ${registeredOfficeLine}. Email: ${site.email}.`
+const contactBlock = `${site.legalName}, ${registeredOfficeLine}. Email: ${site.email}. Phone: ${site.phone.display}.`
 
 export const privacy: LegalDocument = {
   title: "Privacy policy",
-  description: `How ${site.legalName} collects, uses, keeps and deletes personal data, including demo requests and contact messages.`,
+  description: `How ${site.legalName} collects, uses, keeps and deletes personal data, including demo requests and correspondence.`,
   updated: "2026-11-12",
   intro: `This policy explains what personal data ${site.legalName} ("${site.name}", "we", "us") collects, why, how long we keep it and what rights you have. We are the data controller.`,
   sections: [
@@ -31,12 +31,11 @@ export const privacy: LegalDocument = {
         {
           list: [
             "Demo requests: your name, work email address, company, role, team size and any note you add.",
-            "Contact messages: your name, email address, the subject if you give one, and your message.",
-            "Emails: anything you send to us by email, and our replies.",
+            "Emails and calls: anything you send to us by email, your phone number if you call us, and our replies.",
             "Technical data: when a form is submitted, the sender's IP address is held briefly in memory to limit automated abuse. It is not stored with your request. Our hosting provider keeps standard server logs.",
           ],
         },
-        "This website sets no cookies and loads no analytics, advertising or tracking scripts.",
+        "This website sets no cookies and loads no analytics, advertising or tracking scripts. Your choice of light or dark theme is saved in your own browser and is not sent to us.",
         "When you choose a time for a demo you leave this website for a booking page run by a third-party calendar provider. That provider handles the details you enter there under its own privacy policy.",
       ],
     },
@@ -52,7 +51,7 @@ export const privacy: LegalDocument = {
       blocks: [
         {
           list: [
-            "To arrange and follow up a demo you asked for, and to answer your messages. Lawful basis: our legitimate interest in responding to enquiries, and taking steps at your request before entering into a contract.",
+            "To arrange and follow up a demo you asked for, to answer your messages, and to carry out onboarding checks before granting access to the product. Lawful basis: our legitimate interest in responding to enquiries, and taking steps at your request before entering into a contract.",
             "To provide the product to account holders. Lawful basis: performance of a contract.",
             "To keep the website and product secure and prevent abuse. Lawful basis: legitimate interests.",
             "To meet legal obligations, such as keeping accounting records. Lawful basis: legal obligation.",
@@ -66,7 +65,7 @@ export const privacy: LegalDocument = {
       blocks: [
         {
           list: [
-            "Demo requests and contact messages: up to 12 months after our last contact with you, then deleted. If you become a customer, the details move into your account record.",
+            "Demo requests and correspondence: up to 12 months after our last contact with you, then deleted. If you become a customer, the details move into your account record.",
             "Account and screening data: for as long as your account is open, and then for as long as needed to meet legal, accounting or contractual obligations.",
             "You can ask us to delete your data sooner at any time.",
           ],
@@ -129,7 +128,7 @@ export const terms: LegalDocument = {
     {
       title: "What the service is, and what it is not",
       blocks: [
-        `${site.name} provides adverse media screening and sanctions and watchlist screening, with AI analysis of the results. It covers ${counts.languages} languages, ${counts.riskCategories} risk categories and ${counts.sanctionsLists} official sanctions lists. You acknowledge that:`,
+        `${site.name} provides adverse media screening and sanctions and watchlist screening, with AI analysis of the results. It covers ${counts.languages} languages and ${counts.riskCategories} risk categories. You acknowledge that:`,
         {
           list: [
             "the service is a screening support tool. It is not legal, regulatory or compliance advice;",

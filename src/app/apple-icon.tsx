@@ -17,7 +17,7 @@ export default async function AppleIcon() {
         justifyContent: "center",
         background: themeColor("brand"),
         color: themeColor("on-brand"),
-        fontFamily: "Sora",
+        fontFamily: "Bricolage",
         fontSize: monogram.length > 1 ? 78 : 104,
         letterSpacing: "-0.03em",
       }}

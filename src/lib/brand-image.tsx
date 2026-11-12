@@ -7,8 +7,8 @@ import { themeColor } from "./theme"
 /** Shared pieces for generated brand images (icon, wordmarks, Open Graph image). */
 
 export async function headingFont() {
-  const data = await readFile(join(process.cwd(), "src/assets/fonts/Sora-SemiBold.ttf"))
-  return [{ name: "Sora", data, style: "normal" as const, weight: 600 as const }]
+  const data = await readFile(join(process.cwd(), "src/assets/fonts/BricolageGrotesque-Bold.ttf"))
+  return [{ name: "Bricolage", data, style: "normal" as const, weight: 700 as const }]
 }
 
 export function Monogram({ size, onInk = false }: { size: number; onInk?: boolean }) {
@@ -24,7 +24,7 @@ export function Monogram({ size, onInk = false }: { size: number; onInk?: boolea
         alignItems: "center",
         justifyContent: "center",
         fontSize: size * (monogram.length > 1 ? 0.42 : 0.56),
-        fontFamily: "Sora",
+        fontFamily: "Bricolage",
         letterSpacing: "-0.03em",
       }}
     >
@@ -63,7 +63,7 @@ export async function wordmarkImage(background: "light" | "dark") {
       <Monogram size={mark} onInk={onInk} />
       <div
         style={{
-          fontFamily: "Sora",
+          fontFamily: "Bricolage",
           fontSize,
           letterSpacing: "-0.03em",
           whiteSpace: "nowrap",

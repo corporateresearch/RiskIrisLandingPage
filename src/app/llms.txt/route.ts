@@ -1,13 +1,4 @@
-import {
-  absoluteUrl,
-  counts,
-  facts,
-  formatDate,
-  registeredOfficeLine,
-  routes,
-  sanctionsListLabels,
-  site,
-} from "@/lib/site"
+import { absoluteUrl, counts, formatDate, registeredOfficeLine, routes, site } from "@/lib/site"
 
 export const dynamic = "force-static"
 
@@ -15,23 +6,22 @@ export const dynamic = "force-static"
 export function GET() {
   const body = `# ${site.name}
 
-> Adverse media screening and sanctions and watchlist screening on any company or person, with a source link for every finding.
+> ${site.name} checks the companies and people you do business with for negative news and sanctions, in ${counts.languages} languages and across ${counts.riskCategories} risk categories. Evidence, not risk scores.
 
-## What it does
+## What it is
 
-- Adverse media screening across ${counts.riskCategories} risk categories: ${facts.riskCategories.join(", ")}.
-- Sanctions and watchlist screening against ${counts.sanctionsLists} official lists: ${sanctionsListLabels.join(", ")}.
-- ${counts.languages} languages: ${facts.languages.join(", ")}.
+- Adverse media and sanctions screening on companies and people.
+- ${counts.languages} languages and ${counts.riskCategories} risk categories.
 - Recognises spelling and transliteration variants of names.
-- AI analysis: ${facts.analysisOutputs.join(", ").toLowerCase()}.
-- No black-box risk scores. The platform finds and organises the evidence; the analyst makes the call.
+- No risk scores. The platform finds and organises the evidence; the analyst makes the call.
+- For consultancies, due diligence providers, boutique investigation firms and small in-house compliance teams in the United Kingdom and the Middle East.
 
 ## Company
 
 - ${site.legalName}, a private limited company registered in ${site.company.jurisdiction}, number ${site.company.number}
 - Incorporated ${formatDate(site.company.incorporated)}
 - Registered office: ${registeredOfficeLine}
-- Contact: ${site.email}
+- Contact: ${site.email}, ${site.phone.display}
 - ${site.name} is a screening tool. It is not authorised or regulated by the FCA, and all results require human review.
 
 ## Pages

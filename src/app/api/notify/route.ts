@@ -3,8 +3,8 @@ import { NextResponse } from "next/server"
 import { site } from "@/lib/site"
 
 /**
- * Receives Supabase database webhooks for new rows in demo_requests and
- * contact_messages, and emails the site address. Setup is in the README.
+ * Receives the Supabase database webhook for new rows in demo_requests,
+ * and emails the site address. Setup is in the README.
  *
  * Environment: NOTIFY_WEBHOOK_SECRET (shared with the webhook),
  * RESEND_API_KEY and NOTIFY_FROM (a sender on a domain verified with the
@@ -12,7 +12,6 @@ import { site } from "@/lib/site"
  */
 const TABLES: Record<string, string> = {
   demo_requests: "New demo request",
-  contact_messages: "New contact message",
 }
 
 const MAX_BODY_BYTES = 20_000

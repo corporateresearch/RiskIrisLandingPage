@@ -1,8 +1,8 @@
 # Marketing site
 
 Multi-page marketing site with one goal: a qualified visitor books a demo.
-Built with Next.js (App Router), React and Tailwind CSS v4. No runtime
-dependencies beyond Next.js, React and the Supabase client.
+Built with Next.js (App Router), React and Tailwind CSS v4, with Motion for
+animation and the Supabase client for demo requests.
 
 ## Getting started
 
@@ -23,55 +23,60 @@ npm run start
 A rename plus a palette swap is a two-file change.
 
 1. **`src/lib/site.ts`** holds the brand name, legal name, domain, email,
-   company details, booking URL and logo paths. It also holds the product
-   facts (languages, risk categories, sanctions lists), so no number is
-   typed twice.
-2. **`src/app/globals.css`** holds the brand colours in the `@theme` block.
+   company details, phone number, booking URL and logo paths. It also holds the
+   public product facts, so no number is typed twice.
+2. **`src/app/globals.css`** holds the brand colours: the light theme in
+   the `@theme` block and the dark theme under `[data-theme="dark"]`.
 
 Everything else derives from those two files: page copy, metadata, the
 footer, structured data, `llms.txt`, the favicon (`/icon.svg`), the Apple
 touch icon, the Open Graph image and the downloadable wordmarks on `/press`.
 
-Two things sit outside the repository and need the same update:
-
-- `NOTIFY_FROM` (the sender address for notification emails) in the hosting
-  environment.
-- The product screenshot in `public/screenshots`, which shows the product's
-  own interface and so carries whatever name the product displays.
+One thing sits outside the repository and needs the same update:
+`NOTIFY_FROM` (the sender address for notification emails) in the hosting
+environment.
 
 ## Project structure
 
 ```
 src/
-  lib/site.ts            Brand, company details, product facts, app links
+  lib/site.ts            Brand, company details, contact details, public facts
   lib/theme.ts           Reads colour tokens for generated images
   lib/brand-image.tsx    Shared pieces for the generated wordmark and icons
   lib/forms/             Validation rules, rate limit, shared POST handler
-  content/               Page copy: home, FAQ, legal documents, press releases
+  content/               Copy: home, FAQ, legal, press release, penalties
   components/ui/         Primitives: Button, Container, Section, Card, Badge,
-                         IconTile, CheckList, Field, Reveal, PageHeader
-  components/layout/     Header, mobile menu, footer, wordmark, legal document
-  components/sections/   Home page sections
-  components/illustrations/  Coded product illustrations and the screenshot frame
-  components/forms/      Demo request and contact forms
+                         IconTile, CheckList, Field, PageHeader
+  components/layout/     Header, theme toggle, mobile menu, footer, wordmark
+  components/scenes/     Animated scenes for the home page
+  components/forms/      Demo request form
   app/                   Routes, API routes, generated icon / OG image / sitemap
-supabase/                SQL for the two tables
+supabase/                SQL for the demo_requests table
 ```
 
-## Product visuals
+## Home page
 
-- Real captures live in `public/screenshots` as WebP and are registered in
-  `screenshots` in `src/lib/site.ts` with their true width and height.
-- Where no real capture exists, the site shows a coded illustration in
-  `src/components/illustrations`, labelled "Illustration". These are a
-  temporary stand-in. Their sample data is invented and uses the reserved
-  `.example` domain.
-- To replace an illustration in the product tour with a real capture, add
-  the WebP to `public/screenshots` and add an entry under `screenshots.tour`
-  in `site.ts` using the panel key (`search`, `analysis`, `languages`,
-  `report`). The panel then shows the capture, labelled "Product screenshot".
+Five sections in a fixed order (problem, solution, benefits, proof, call to
+action) after the hero, each with its own animated scene in
+`src/components/scenes`. "Book a demo" appears in the header and in the
+closing section only. Each section ends with a "Next" shortcut; normal
+scrolling works throughout.
 
-Do not add artwork that is not a genuine capture of the product.
+What the site deliberately does not publish: how the product works, the
+lists of languages, risk categories and sanctions sources, pricing, and any
+personal names. Only the two counts (languages and risk categories) are
+public. Keep new copy within those limits.
+
+### Penalty cases
+
+`src/content/penalties.ts` feeds the proof section. Every case must link to
+the regulator's own announcement. Do not add a case without one.
+
+## Themes
+
+Light and dark, switched by the toggle in the header. The first visit
+follows the device setting; the choice is then kept in the browser's local
+storage. No cookie is set.
 
 ## Environment variables
 
@@ -82,19 +87,14 @@ Do not add artwork that is not a genuine capture of the product.
 | `NOTIFY_WEBHOOK_SECRET` | For notifications | Shared secret checked by `/api/notify` |
 | `RESEND_API_KEY` | For notifications | API key for the email provider |
 | `NOTIFY_FROM` | For notifications | Sender, on a domain verified with the email provider |
-| `NEXT_PUBLIC_APP_URL` | No | Product app URL. Shows "Log in" in the navigation and "Sign up" as a secondary link |
 
 Without the Supabase variables the forms still render. A submission returns
 an error and the visitor is shown the direct booking link and the email
 address, so the request is not lost silently.
 
-The login and sign-up paths appended to `NEXT_PUBLIC_APP_URL` are set in
-`site.app` in `src/lib/site.ts`.
-
 ## Demo requests
 
-`POST /api/demo-request` (and `POST /api/contact`) run through one shared
-handler in `src/lib/forms/handle-submission.ts`:
+`POST /api/demo-request` runs through the handler in `src/lib/forms/handle-submission.ts`:
 
 - same-origin check and JSON content-type check;
 - request body capped at 10 KB, each field capped in length;
@@ -106,13 +106,9 @@ handler in `src/lib/forms/handle-submission.ts`:
 
 ### Database setup
 
-Run both files once in the Supabase SQL editor:
-
-- `supabase/demo_requests.sql`
-- `supabase/contact_messages.sql`
-
-Each creates its table with length checks, enables row level security and
-adds a single policy that lets the anon role insert. The anon role cannot
+Run `supabase/demo_requests.sql` once in the Supabase SQL editor. It creates
+the table with length checks, enables row level security and adds a single
+policy that lets the anon role insert. The anon role cannot
 read, update or delete rows. Read submissions in the Supabase dashboard.
 
 ## Notifications
@@ -132,8 +128,7 @@ email provider's HTTP API.
    - URL: `https://<your-domain>/api/notify`
    - HTTP header: `x-webhook-secret` with the value of
      `NOTIFY_WEBHOOK_SECRET`.
-4. Create a second webhook with the same settings for `contact_messages`.
-5. Submit the form once and confirm the email arrives. Failed deliveries
+4. Submit the form once and confirm the email arrives. Failed deliveries
    appear in the webhook's log in Supabase.
 
 `/api/notify` rejects requests without the correct secret and ignores
@@ -141,15 +136,15 @@ events for any other table.
 
 ## Press releases
 
-`/press` renders a release only when an entry in `src/content/press.ts` has
-a real founder quote. The file ships empty. Do not add placeholder quotes.
+Releases live in `src/content/press.ts`. They state facts only: no invented
+customers, figures or quotes. Quotes are attributed by role, not by name.
 
 ## Accessibility and privacy
 
 - One `h1` per page, ordered headings, visible focus rings, a skip link and
   a focus-trapped mobile menu.
-- Scroll animations are disabled when the visitor prefers reduced motion,
-  and content is visible without JavaScript.
+- Animations stop when the visitor prefers reduced motion, and every scene
+  has a text description for screen readers.
 - The site sets no cookies and loads no third-party scripts. The
   Content-Security-Policy in `next.config.ts` allows same-origin requests
   only.

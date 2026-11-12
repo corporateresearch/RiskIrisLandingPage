@@ -9,15 +9,7 @@ import type { NavLink } from "./navigation"
 const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 /** Small-screen navigation: a modal dialog with a focus trap and Escape to close. */
-export function MobileMenu({
-  links,
-  loginLink,
-  demoHref,
-}: {
-  links: NavLink[]
-  loginLink: NavLink | null
-  demoHref: string
-}) {
+export function MobileMenu({ links, demoHref }: { links: NavLink[]; demoHref: string }) {
   const [open, setOpen] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
@@ -113,16 +105,9 @@ export function MobileMenu({
                   </Link>
                 </li>
               ))}
-              {loginLink && (
-                <li>
-                  <a href={loginLink.href} className="block py-4 text-lg font-medium text-heading">
-                    {loginLink.label}
-                  </a>
-                </li>
-              )}
             </ul>
             <div className="mt-8" onClick={close}>
-              <Button href={demoHref} size="lg" className="w-full">
+              <Button href={demoHref} size="lg" variant="accent" className="w-full">
                 Book a demo
               </Button>
             </div>

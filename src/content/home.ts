@@ -1,192 +1,114 @@
-import { counts, facts, sanctionsListLabels, site } from "@/lib/site"
+import { counts, site } from "@/lib/site"
 
-const listSentence = `${sanctionsListLabels.slice(0, -1).join(", ")} and ${sanctionsListLabels.at(-1)}`
+/** Home page copy: problem, solution, benefits, proof, call to action. */
+
+export const stages = [
+  { id: "hero", label: "Start" },
+  { id: "problem", label: "Problem" },
+  { id: "solution", label: "Solution" },
+  { id: "benefits", label: "Benefits" },
+  { id: "proof", label: "Proof" },
+  { id: "book", label: "Book a demo" },
+] as const
 
 export const hero = {
-  title: ["Screen every name.", "Defend every decision."],
-  lead: `${site.name} runs adverse media and sanctions screening on any company or person, in ${counts.languages} languages and across ${counts.riskCategories} risk categories. Every finding links to its source, so your analysts can check the evidence and stand behind the conclusion.`,
-  primaryCta: "Book a demo",
-  secondaryCta: "See how it works",
-  trustLine: `${site.demo.durationMinutes}-minute call · No commitment`,
+  title: "Before you sign a contract, know who you're signing with.",
+  lead: `${site.name} checks the companies and people you do business with for negative news and sanctions, in ${counts.languages} languages.`,
+  query: "Any company. Any person.",
+  counterLabel: "hits to review",
+  punchline: "1,000 hits to review?",
+  punchlineSub: "Book a demo to see it in action.",
+  next: "See the problem",
 }
 
-export const listsStrip = {
-  title: `Checks names against ${counts.sanctionsLists} official sanctions lists`,
-}
-
-export const howItWorks = {
-  eyebrow: "How it works",
-  title: "From a name to an evidence file in four steps",
-  lead: "The platform does the searching and the organising. The judgement stays with your analyst.",
-  steps: [
-    {
-      title: "Enter a name",
-      body: "Start with the name of the company or person you are researching.",
-    },
-    {
-      title: "Search",
-      body: `The platform searches adverse media in ${counts.languages} languages across ${counts.riskCategories} risk categories, and checks the name against ${counts.sanctionsLists} official sanctions lists. Spelling and transliteration variants are included.`,
-    },
-    {
-      title: "Read the analysis",
-      body: "AI analysis arranges what was found into a summary of findings, a timeline and event details. Every finding has a link to its source.",
-    },
-    {
-      title: "Decide and export",
-      body: "Your analyst reads the evidence and makes the call. Export a report to keep with the file.",
-    },
+export const problem = {
+  eyebrow: "The problem",
+  title: "You cannot base decisions on uncertainty.",
+  lead: "One company can return thousands of supposedly negative articles. Most are noise. A few matter. Somebody has to read them all to find out which.",
+  example: {
+    from: "500",
+    fromLabel: "articles to read",
+    to: "10",
+    toLabel: "real findings",
+    note: "An illustration of a typical search, not a measured statistic.",
+  },
+  pains: [
+    { title: "Too many hits", body: "Thousands of articles on a single name, often against a deadline." },
+    { title: "Flags you cannot trust", body: "False positives waste hours. False negatives are the ones that hurt." },
+    { title: "Blind spots", body: "Reports published in other languages and scripts go unseen." },
+    { title: "One name, many spellings", body: "The same person, written three ways, treated as three people." },
   ],
+  next: "See the answer",
 }
 
-export const platform = {
-  eyebrow: "Platform",
-  title: "What the platform does",
-  lead: "Two kinds of screening in one search, with the evidence laid out for review.",
-  features: [
+export const solution = {
+  eyebrow: "The solution",
+  title: "Less noise. Nothing important lost.",
+  lead: "Narrow thousands of results down to what matters, and hand the routine part to automation, so an analyst's time goes on judgement.",
+  points: [
+    { title: "Human-centred", body: "Technology speeds up the search. A person makes the decision." },
+    { title: "Evidence, not risk scores", body: "A score cannot explain itself. A sourced finding can." },
+    { title: "Yours to overrule", body: "Disagree with the AI? Change it. Nothing is set in stone." },
+  ],
+  hint: "How it does this is something we show on a call, not on a web page.",
+  next: "See what you gain",
+}
+
+export const benefits = {
+  eyebrow: "The benefits",
+  title: "What changes for your team",
+  numbers: [
+    { value: counts.languages, label: "languages" },
+    { value: counts.riskCategories, label: "risk categories" },
+  ],
+  cards: [
     {
-      icon: "search",
-      title: "Adverse media screening",
-      body: `Search published media for reports about any company or person, across ${counts.riskCategories} risk categories.`,
-    },
-    {
-      icon: "lists",
-      title: "Sanctions and watchlist screening",
-      body: `Check the same name against ${counts.sanctionsLists} official sanctions lists: ${listSentence}.`,
-    },
-    {
-      icon: "globe",
-      title: `${counts.languages} languages`,
-      body: `${facts.languages.slice(0, -1).join(", ")} and ${facts.languages.at(-1)}.`,
+      icon: "clock",
+      title: "Hours back",
+      body: "Stop reading the same story twenty times to find the one that matters.",
     },
     {
       icon: "variants",
-      title: "Name variants",
-      body: "Recognises spelling and transliteration variants of a name, so one search covers the different ways it is written.",
+      title: "Name variants caught",
+      body: "Different spellings of one name are searched as one name.",
+    },
+    {
+      icon: "globe",
+      title: "Research in the original language",
+      body: "Built multilingual from the start, not translated afterwards.",
     },
     {
       icon: "link",
-      title: "AI analysis with sources",
-      body: "A summary of findings, a timeline and event details, with a source link for every finding.",
+      title: "Every finding sourced",
+      body: "Each finding links to where it was published. No invented citations.",
     },
     {
       icon: "scale",
-      title: "No black-box risk scores",
-      body: "The platform finds and organises the evidence. It does not grade the subject. Your analyst makes the call.",
-    },
-  ],
-  categoriesTitle: `The ${counts.riskCategories} risk categories`,
-} as const
-
-export const tour = {
-  eyebrow: "Product tour",
-  title: "What you see when you run a search",
-  lead: "The four views an analyst works through, from results to report.",
-  panels: [
-    {
-      key: "search",
-      title: "Search results",
-      body: "One search returns adverse media results and sanctions list checks for the name you entered, so both sit side by side for review.",
-      points: [
-        `Adverse media across ${counts.riskCategories} risk categories`,
-        `Checks against ${counts.sanctionsLists} official sanctions lists`,
-      ],
-    },
-    {
-      key: "analysis",
-      title: "AI analysis with source citations",
-      body: "The analysis sets out what was found and where it came from. You can follow any finding back to the page it was published on.",
-      points: facts.analysisOutputs,
-    },
-    {
-      key: "languages",
-      title: `${counts.languages} languages and name variants`,
-      body: "Names are written differently from one language and one publication to the next. The platform recognises spelling and transliteration variants, so they are searched together.",
-      points: [`${counts.languages} languages searched`, "Spelling and transliteration variants recognised"],
-    },
-    {
-      key: "report",
-      title: "Exported report",
-      body: "When the review is done, export the findings as a report and keep it with your case file.",
-      points: ["Export when your review is complete", "A record to keep with the file"],
-    },
-  ],
-} as const
-
-export const useCases = {
-  eyebrow: "Use cases",
-  title: "Built for teams that research companies and people across borders",
-  lead: "The work is the same whether it is for a client or for your own organisation: find what has been reported, check the lists, and record the evidence.",
-  cases: [
-    {
-      icon: "briefcase",
-      title: "Consultancies",
-      body: "Research counterparties, partners and acquisition targets as part of a client engagement, in the languages they are reported in.",
+      title: "The analyst in control",
+      body: "No black-box verdicts. You see the evidence and you make the call.",
     },
     {
       icon: "document",
-      title: "Due diligence providers",
-      body: "Run a first pass across languages and categories before deeper research, with sources you can cite in your own report.",
-    },
-    {
-      icon: "search",
-      title: "Boutique investigation firms",
-      body: "See reported events about a subject in order, and follow each one back to where it was published.",
-    },
-    {
-      icon: "users",
-      title: "In-house compliance teams",
-      body: "Screen customers, suppliers and other third parties, and keep the evidence behind each decision.",
+      title: "Reports you can edit",
+      body: "Export to PDF or Word and change anything you disagree with.",
     },
   ],
+  variantsTitle: "Same person. Different letters. Same findings.",
+  next: "See what is at stake",
 } as const
 
-export const security = {
-  eyebrow: "Security and data handling",
-  title: "Plain commitments about your data",
-  lead: "What we do and do not do, without the jargon.",
-  commitments: [
-    {
-      title: "No cookies or trackers on this website",
-      body: "This site sets no cookies and loads no analytics, advertising or tracking scripts.",
-    },
-    {
-      title: "Your details are used to reply to you",
-      body: "When you request a demo or send a message, we use what you tell us to arrange the call and answer your question. We do not sell it or pass it on for marketing.",
-    },
-    {
-      title: "Deleted on request",
-      body: `Email ${site.email} and we will delete the details you have given us.`,
-    },
-    {
-      title: "Every finding can be checked",
-      body: "Each finding in the product links to its source, so nothing has to be taken on trust.",
-    },
-    {
-      title: "No automated verdicts",
-      body: "The product does not produce risk scores and does not decide for you. Your analyst reviews the evidence and makes the call.",
-    },
-    {
-      title: "Clear about what we are",
-      body: `${site.name} is a screening tool from a company registered in ${site.company.jurisdiction}. It is not authorised or regulated by the FCA, and results need human review before any action.`,
-    },
-  ],
+export const proof = {
+  eyebrow: "The proof",
+  title: "Third-party failures are expensive.",
+  lead: "Penalties announced by regulators for sanctions, bribery and third-party failures. Each one links to the regulator's own announcement.",
+  totalLabel: "in penalties across these cases",
+  disclaimer: `These cases show what is at stake when a third party is not properly checked. They are not a claim that ${site.name} would have prevented them.`,
+  next: "Book a demo",
 }
 
-export const factsBand = [
-  { value: counts.sanctionsLists, label: "official sanctions lists" },
-  { value: counts.riskCategories, label: "risk categories" },
-  { value: counts.languages, label: "languages" },
-]
-
-export const faqTeaser = {
-  eyebrow: "FAQ",
-  title: "Common questions",
-  linkLabel: "Read all questions",
-}
-
-export const finalCta = {
-  title: "See it on a name you choose",
-  lead: `Book a ${site.demo.durationMinutes}-minute demo. We will run a search live and walk through the results, the analysis and the report.`,
+export const closing = {
+  title: ["Screen every name.", "Defend every decision."],
+  lead: `A ${site.demo.durationMinutes}-minute call. Bring a name you want to check.`,
   cta: "Book a demo",
-  trustLine: hero.trustLine,
+  note: "Access is granted after onboarding checks on each client.",
 }

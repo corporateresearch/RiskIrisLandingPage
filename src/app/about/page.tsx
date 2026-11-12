@@ -1,29 +1,31 @@
 import { CompanyDetails } from "@/components/layout/CompanyDetails"
-import { FinalCta } from "@/components/sections/FinalCta"
-import { Card } from "@/components/ui/Card"
 import { Container } from "@/components/ui/Container"
 import { PageHeader } from "@/components/ui/PageHeader"
 import { pageMetadata } from "@/lib/metadata"
-import { counts, formatDate, routes, site } from "@/lib/site"
+import { counts, routes, site } from "@/lib/site"
 
 export const metadata = pageMetadata({
   title: "About",
-  description: `${site.name} is adverse media and sanctions screening that shows its evidence. Who we are, what we believe and our registered company details.`,
+  description: `${site.name} is screening built by investigators, for investigators: evidence in place of risk scores, in ${counts.languages} languages.`,
   path: routes.about,
 })
 
-const principles = [
+const beliefs = [
   {
-    title: "Evidence, not scores",
-    body: "We do not produce black-box risk scores. A number cannot be checked or explained to a client. The platform finds and organises the evidence, and the analyst makes the call.",
+    title: "You cannot base decisions on uncertainty",
+    body: "A flag that cannot be explained is not something an analyst can stand behind. We would rather show the evidence and let a person judge it.",
   },
   {
-    title: "Every finding has a source",
-    body: "The AI analysis gives a summary of findings, a timeline and event details, and each finding links to where it was published. Anything the platform reports can be verified.",
+    title: "Signals, not verdicts",
+    body: "A sanctions match is a possible match until someone checks it. A negative article can describe an allegation that was never proven. The product treats both that way.",
   },
   {
-    title: "Names are not written one way",
-    body: `Research across borders means research across scripts and spellings. The platform works in ${counts.languages} languages and recognises spelling and transliteration variants of a name.`,
+    title: "A missed risk is worse than a wasted hour",
+    body: "False positives cost time. False negatives are the critical failure. The two are not the same kind of mistake and should not be traded off as if they were.",
+  },
+  {
+    title: "Say what you do not know",
+    body: "If a source could not be reached, the product says so. It does not quietly return nothing and let that look like a clean result.",
   },
 ]
 
@@ -32,28 +34,29 @@ export default function AboutPage() {
     <>
       <PageHeader
         title={`About ${site.name}`}
-        lead="Screening for people who research companies and individuals across countries and languages, and who have to stand behind what they conclude."
+        lead="Built by investigators, for investigators. Finding the one true finding in an ever-growing sea of information."
       />
       <Container className="grid gap-12 py-12 sm:py-16 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
         <div>
-          <h2 className="text-xl sm:text-2xl">What we do</h2>
+          <h2 className="text-xl sm:text-2xl">Where it came from</h2>
           <div className="mt-4 space-y-4">
             <p>
-              {site.name} runs adverse media screening and sanctions and watchlist screening on any company or person.
-              It searches in {counts.languages} languages across {counts.riskCategories} risk categories and checks
-              names against {counts.sanctionsLists} official sanctions lists.
+              {site.name} grew out of years of screening companies and people for compliance and investigations work.
+              The pattern was always the same: thousands of supposedly negative articles on a single name, flags that
+              could not be fully trusted, weak coverage of reporting in other languages, and names missed because they
+              were spelt another way. In the end the work fell back to manual searching.
             </p>
             <p>
-              It is built for consultancies, due diligence providers, boutique investigation firms and small in-house
-              compliance teams: people who need to find what has been reported about a subject, and show where each
-              finding came from.
+              The product exists to fix that for the people who do this work: consultancies, due diligence providers,
+              boutique investigation firms and small in-house compliance teams, in the United Kingdom and the Middle
+              East.
             </p>
           </div>
 
           <h2 className="mt-12 text-xl sm:text-2xl">What we believe</h2>
           <ul className="mt-6 space-y-6">
-            {principles.map((item) => (
-              <li key={item.title}>
+            {beliefs.map((item) => (
+              <li key={item.title} className="border-l-2 border-brand pl-5">
                 <h3 className="font-body text-base font-semibold tracking-normal">{item.title}</h3>
                 <p className="mt-1.5 text-sm">{item.body}</p>
               </li>
@@ -62,22 +65,19 @@ export default function AboutPage() {
 
           <h2 className="mt-12 text-xl sm:text-2xl">Where we are today</h2>
           <p className="mt-4">
-            {site.legalName} was incorporated on {formatDate(site.company.incorporated)}. The product is working and
-            open for self-serve sign-up. We are a young company, and we would rather show you the product on a call than
-            describe it.
+            The product is live and covers {counts.languages} languages and {counts.riskCategories} risk categories.
+            Access is granted after onboarding checks on each client. We are a young company, and we would rather show
+            you the product on a call than describe it.
           </p>
         </div>
 
-        <div>
-          <Card className="p-6 sm:p-8">
-            <h2 className="text-xl">Company details</h2>
-            <div className="mt-4">
-              <CompanyDetails />
-            </div>
-          </Card>
+        <div className="self-start rounded-lg border border-line bg-raised p-6 shadow-card sm:p-8">
+          <h2 className="text-xl">Company details</h2>
+          <div className="mt-4">
+            <CompanyDetails />
+          </div>
         </div>
       </Container>
-      <FinalCta />
     </>
   )
 }
