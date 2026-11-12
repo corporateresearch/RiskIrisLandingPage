@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -41,7 +42,7 @@ yarn-error.log*
 next-env.d.ts
 
 # local audit artifacts
-Google-SEO-Report-riskiris.com-full.pdf
-SEO-Audit-Report-riskiris.com.txt
+Google-SEO-Report-*.pdf
+SEO-Audit-Report-*.txt
 /charts/
 /claude-seo/
