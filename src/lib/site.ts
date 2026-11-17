@@ -15,7 +15,7 @@ export const site = {
   legalName: "RISK IRIS LIMITED",
   domain,
   url: `https://www.${domain}`,
-  email: "mouataz@riskiris.dev",
+  email: "infor@riskiris.dev",
   phone: { display: "+44 20 3432 3772", href: "tel:+442034323772" },
   bookingUrl: "https://calendar.app.google/2dMF8t33nKf367yN7",
   locale: "en_GB",
