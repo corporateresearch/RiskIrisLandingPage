@@ -1,0 +1,166 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background ink to pine gradient -->
+    <linearGradient id="liBg" x1="0" y1="0" x2="1584" y2="396" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b1512" />
+      <stop offset="55%" stop-color="#0f2922" />
+      <stop offset="100%" stop-color="#091b16" />
+    </linearGradient>
+
+    <!-- Subtle radial glow for atmosphere behind logo -->
+    <radialGradient id="liGlow" cx="500" cy="198" r="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f5c4a" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#0f5c4a" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#0b1512" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Decorative grid pattern -->
+    <pattern id="liGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="18" cy="18" r="1" fill="#6fd3b0" fill-opacity="0.12" />
+    </pattern>
+
+    <!-- Shield outline gradient -->
+    <linearGradient id="shieldGrad" x1="100" y1="20" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#dfeee7" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#6fd3b0" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Iris aperture contour gradient using citron accent -->
+    <linearGradient id="irisGrad" x1="50" y1="50" x2="150" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d4e157" />
+      <stop offset="60%" stop-color="#dfeee7" />
+      <stop offset="100%" stop-color="#6fd3b0" />
+    </linearGradient>
+
+    <!-- Pupil glow -->
+    <radialGradient id="pupilGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4e157" />
+      <stop offset="60%" stop-color="#0f5c4a" />
+      <stop offset="100%" stop-color="#0a4436" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1584" height="396" fill="url(#liBg)" />
+  <rect width="1584" height="396" fill="url(#liGlow)" />
+  <rect width="1584" height="396" fill="url(#liGrid)" />
+
+  <!-- Diagonal high-tech accent light sweep -->
+  <path d="M1200 -50 L1450 -50 L1150 450 L900 450 Z" fill="#6fd3b0" fill-opacity="0.02" />
+  <path d="M1380 -50 L1480 -50 L1230 450 L1130 450 Z" fill="#d4e157" fill-opacity="0.025" />
+
+  <!-- Safe area content group (Clear of left/bottom mobile/desktop profile photo overlay) -->
+  <g transform="translate(420, 0)">
+    
+    <!-- EMBLEM / LOGO (scaled 200x200 centered at y=98) -->
+    <g transform="translate(0, 98)">
+      <!-- Container Base -->
+      <rect width="200" height="200" rx="44" fill="#0f5c4a" stroke="#6fd3b0" stroke-width="1.5" stroke-opacity="0.3" />
+      <rect width="200" height="200" rx="44" fill="#0a4436" fill-opacity="0.65" />
+
+      <!-- Shield -->
+      <path
+        d="M100 32 L44 56 V94 C44 133 68 161 100 169 C132 161 156 133 156 94 V56 L100 32 Z"
+        stroke="url(#shieldGrad)"
+        stroke-width="7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="#0a4436"
+        fill-opacity="0.6"
+      />
+
+      <!-- Iris Eye Contour -->
+      <path
+        d="M60 100 C71 75 86 64 100 64 C114 64 129 75 140 100 C129 125 114 136 100 136 C86 136 71 125 60 100 Z"
+        stroke="url(#irisGrad)"
+        stroke-width="6.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- Aperture Ring -->
+      <circle
+        cx="100"
+        cy="100"
+        r="23"
+        stroke="#d4e157"
+        stroke-width="5"
+        stroke-dasharray="11 7"
+        opacity="0.9"
+      />
+
+      <!-- Pupil -->
+      <circle
+        cx="100"
+        cy="100"
+        r="11"
+        fill="url(#pupilGrad)"
+      />
+
+      <!-- Calibration Dots -->
+      <circle cx="100" cy="58" r="3.5" fill="#d4e157" />
+      <circle cx="100" cy="142" r="3.5" fill="#d4e157" />
+    </g>
+
+    <!-- TYPOGRAPHY & BRAND VALUE PROPOSITION -->
+    <g transform="translate(240, 0)">
+      <!-- Brand Name -->
+      <text x="0" y="165" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="800" fill="#f6f4ea" letter-spacing="-1.5">
+        Risk <tspan fill="#6fd3b0">Iris</tspan>
+      </text>
+
+      <!-- Pill Badge: RegTech / Adverse Media & Sanctions -->
+      <g transform="translate(290, 122)">
+        <rect width="240" height="34" rx="17" fill="#14302a" stroke="#6fd3b0" stroke-opacity="0.4" stroke-width="1" />
+        <circle cx="17" cy="17" r="4.5" fill="#d4e157" />
+        <text x="32" y="22" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#dfeee7" letter-spacing="0.5">
+          ADVERSE MEDIA &amp; SANCTIONS
+        </text>
+      </g>
+
+      <!-- Main Tagline -->
+      <text x="0" y="215" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="600" fill="#eef1e6" letter-spacing="-0.5">
+        Know who you're signing with — before you sign.
+      </text>
+
+      <!-- Supporting Statement -->
+      <text x="0" y="254" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" fill="#a9b8ae">
+        High-recall adverse media &amp; sanctions screening in 11 languages with grounded evidence.
+      </text>
+
+      <!-- Highlights / Value Chips -->
+      <g transform="translate(0, 278)">
+        <!-- Chip 1 -->
+        <g transform="translate(0, 0)">
+          <rect width="180" height="30" rx="8" fill="#10201a" stroke="#233a33" stroke-width="1" />
+          <path d="M14 15 L18 19 L26 11" stroke="#d4e157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="34" y="19" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#dfeee7">
+            11 Global Languages
+          </text>
+        </g>
+
+        <!-- Chip 2 -->
+        <g transform="translate(192, 0)">
+          <rect width="180" height="30" rx="8" fill="#10201a" stroke="#233a33" stroke-width="1" />
+          <path d="M14 15 L18 19 L26 11" stroke="#d4e157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="34" y="19" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#dfeee7">
+            Zero Hallucination
+          </text>
+        </g>
+
+        <!-- Chip 3 -->
+        <g transform="translate(384, 0)">
+          <rect width="175" height="30" rx="8" fill="#10201a" stroke="#233a33" stroke-width="1" />
+          <path d="M14 15 L18 19 L26 11" stroke="#d4e157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="34" y="19" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#dfeee7">
+            London, UK (UK Ltd)
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Clean Bottom Accent Line -->
+  <rect x="0" y="392" width="1584" height="4" fill="#0f5c4a" />
+  <rect x="520" y="392" width="360" height="4" fill="#d4e157" />
+</svg>

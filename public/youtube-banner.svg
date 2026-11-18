@@ -1,0 +1,178 @@
+<svg width="2560" height="1440" viewBox="0 0 2560 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background ink to pine gradient -->
+    <linearGradient id="ytBg" x1="0" y1="0" x2="2560" y2="1440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#070e0c" />
+      <stop offset="45%" stop-color="#0a1a15" />
+      <stop offset="70%" stop-color="#0f2b23" />
+      <stop offset="100%" stop-color="#060c0a" />
+    </linearGradient>
+
+    <!-- Center Safe Area Focused Glow -->
+    <radialGradient id="centerGlow" cx="1280" cy="720" r="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f5c4a" stop-opacity="0.55" />
+      <stop offset="60%" stop-color="#0f5c4a" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#070e0c" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Geometric background cyber grid -->
+    <pattern id="ytGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="24" cy="24" r="1.2" fill="#6fd3b0" fill-opacity="0.14" />
+    </pattern>
+
+    <!-- Shield outline gradient -->
+    <linearGradient id="ytShieldGrad" x1="120" y1="20" x2="120" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#dfeee7" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#6fd3b0" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Iris aperture contour gradient using citron accent -->
+    <linearGradient id="ytIrisGrad" x1="60" y1="60" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d4e157" />
+      <stop offset="60%" stop-color="#dfeee7" />
+      <stop offset="100%" stop-color="#6fd3b0" />
+    </linearGradient>
+
+    <!-- Pupil glow -->
+    <radialGradient id="ytPupilGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4e157" />
+      <stop offset="60%" stop-color="#0f5c4a" />
+      <stop offset="100%" stop-color="#0a4436" />
+    </radialGradient>
+  </defs>
+
+  <!-- Canvas Base (Full TV & Display 2560x1440) -->
+  <rect width="2560" height="1440" fill="url(#ytBg)" />
+  <rect width="2560" height="1440" fill="url(#centerGlow)" />
+  <rect width="2560" height="1440" fill="url(#ytGrid)" />
+
+  <!-- Diagonal high-tech accent light sweep -->
+  <path d="M1900 0 L2300 0 L1800 1440 L1400 1440 Z" fill="#6fd3b0" fill-opacity="0.02" />
+  <path d="M2100 0 L2260 0 L1900 1440 L1740 1440 Z" fill="#d4e157" fill-opacity="0.025" />
+
+  <!-- ============================================================ -->
+  <!-- SAFE AREA: All critical branding sits strictly within        -->
+  <!-- X: 510 to 2050 (1546px width), Y: 508 to 931 (423px height)  -->
+  <!-- ============================================================ -->
+  <g id="safe-area-content">
+    
+    <!-- EMBLEM / LOGO (scaled 200x200 centered at X:620, Y:620) -->
+    <g transform="translate(600, 620)">
+      <!-- Container Base -->
+      <rect width="200" height="200" rx="44" fill="#0f5c4a" stroke="#6fd3b0" stroke-width="2" stroke-opacity="0.3" />
+      <rect width="200" height="200" rx="44" fill="#0a4436" fill-opacity="0.65" />
+
+      <!-- Shield -->
+      <path
+        d="M100 32 L44 56 V94 C44 133 68 161 100 169 C132 161 156 133 156 94 V56 L100 32 Z"
+        stroke="url(#ytShieldGrad)"
+        stroke-width="7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="#0a4436"
+        fill-opacity="0.6"
+      />
+
+      <!-- Iris Eye Contour -->
+      <path
+        d="M60 100 C71 75 86 64 100 64 C114 64 129 75 140 100 C129 125 114 136 100 136 C86 136 71 125 60 100 Z"
+        stroke="url(#ytIrisGrad)"
+        stroke-width="6.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- Aperture Ring -->
+      <circle
+        cx="100"
+        cy="100"
+        r="23"
+        stroke="#d4e157"
+        stroke-width="5"
+        stroke-dasharray="11 7"
+        opacity="0.9"
+      />
+
+      <!-- Pupil -->
+      <circle
+        cx="100"
+        cy="100"
+        r="11"
+        fill="url(#ytPupilGrad)"
+      />
+
+      <!-- Calibration Dots -->
+      <circle cx="100" cy="58" r="3.5" fill="#d4e157" />
+      <circle cx="100" cy="142" r="3.5" fill="#d4e157" />
+    </g>
+
+    <!-- TYPOGRAPHY & MESSAGING -->
+    <g transform="translate(845, 0)">
+      
+      <!-- Top Eyebrow Badge -->
+      <g transform="translate(0, 630)">
+        <rect width="265" height="34" rx="17" fill="#14302a" stroke="#6fd3b0" stroke-opacity="0.4" stroke-width="1" />
+        <circle cx="17" cy="17" r="4.5" fill="#d4e157" />
+        <text x="32" y="22" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#dfeee7" letter-spacing="1">
+          COMPLIANCE INTELLIGENCE
+        </text>
+      </g>
+
+      <!-- Brand Title -->
+      <text x="0" y="728" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="68" font-weight="800" fill="#f6f4ea" letter-spacing="-1.8">
+        Risk <tspan fill="#6fd3b0">Iris</tspan>
+      </text>
+
+      <!-- Primary Tagline -->
+      <text x="0" y="780" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="600" fill="#eef1e6" letter-spacing="-0.5">
+        Before you sign a contract, know who you're signing with.
+      </text>
+
+      <!-- Description / Core Offer -->
+      <text x="0" y="818" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" fill="#a9b8ae">
+        Adverse media &amp; sanctions screening in 11 languages with grounded, auditable evidence.
+      </text>
+
+      <!-- Pillar Badges -->
+      <g transform="translate(0, 842)">
+        <!-- Badge 1 -->
+        <g transform="translate(0, 0)">
+          <rect width="186" height="32" rx="8" fill="#10201a" stroke="#233a33" stroke-width="1" />
+          <path d="M14 16 L18 20 L26 12" stroke="#d4e157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="34" y="20" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#dfeee7">
+            11 Global Languages
+          </text>
+        </g>
+
+        <!-- Badge 2 -->
+        <g transform="translate(198, 0)">
+          <rect width="190" height="32" rx="8" fill="#10201a" stroke="#233a33" stroke-width="1" />
+          <path d="M14 16 L18 20 L26 12" stroke="#d4e157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="34" y="20" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#dfeee7">
+            Auditable Evidence
+          </text>
+        </g>
+
+        <!-- Badge 3 -->
+        <g transform="translate(400, 0)">
+          <rect width="186" height="32" rx="8" fill="#10201a" stroke="#233a33" stroke-width="1" />
+          <path d="M14 16 L18 20 L26 12" stroke="#d4e157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="34" y="20" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#dfeee7">
+            Zero Hallucination
+          </text>
+        </g>
+
+        <!-- Badge 4: URL -->
+        <g transform="translate(598, 0)">
+          <rect width="150" height="32" rx="8" fill="#14302a" stroke="#6fd3b0" stroke-opacity="0.6" stroke-width="1" />
+          <text x="18" y="20" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#d4e157">
+            riskiris.com ↗
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Accent border line along the bottom of the banner safe zone -->
+  <line x1="510" y1="931" x2="2050" y2="931" stroke="#233a33" stroke-width="1" />
+</svg>
