@@ -282,10 +282,17 @@ Where it conflicts with this project, this project wins:
   sections, says nothing about how the product works, and shows no product
   interface or photography presented as real.
 
-Take from it: the dark, cinematic hero treatment; the contrast between dark
-narrative sections and light reading sections; generous whitespace; large,
-light display type; and pill-shaped buttons.
+What this project takes from it:
 
+- **Two tracks.** Cinematic dark sections (hero, problem, closing) and
+  lighter reading sections between them. The dark sections stay dark in
+  both themes.
+- **Large, light display type.** Headings are set at weight 300 with tight
+  tracking; the h1 is the largest text on the page.
+- **Pill buttons** everywhere, one filled and one outlined.
+- **Flat surfaces.** No drop shadows on the dark sections, hairlines in
+  place of boxed cards, and generous space between groups.
+- **One section per screen** on a desktop, on one shared column grid.
 
 ## Overview
 

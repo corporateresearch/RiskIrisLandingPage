@@ -35,6 +35,12 @@ export const site = {
     wordmarkOnDark: "/brand/wordmark-on-dark.png",
   },
   demo: { durationMinutes: 30 },
+  /**
+   * Height-map image the 3D hero is built from: brighter pixels stand taller
+   * and pure red pixels are drawn in the accent colour. Swap the file to
+   * change the figure.
+   */
+  heroRelief: "/media/relief-source.png",
 } as const
 
 /** Initials used for the generated icon and wordmark. */

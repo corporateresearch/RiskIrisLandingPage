@@ -9,9 +9,13 @@ import { Wordmark } from "./Wordmark"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-canvas/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line bg-canvas">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href={routes.home} aria-label={`${site.name} home`} className="shrink-0">
+        <Link
+          href={routes.home}
+          aria-label={`${site.name} home`}
+          className="inline-flex min-h-11 shrink-0 items-center"
+        >
           <Wordmark />
         </Link>
 

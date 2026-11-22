@@ -34,11 +34,7 @@ export function StageRail() {
                 className="group flex items-center justify-end gap-3"
               >
                 <span
-                  className={`text-xs font-semibold transition-opacity ${
-                    current
-                      ? "text-heading opacity-100"
-                      : "text-muted opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
-                  }`}
+                  className="rounded-full border border-line bg-raised px-2.5 py-1 text-xs font-semibold text-heading opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
                 >
                   {String(index).padStart(2, "0")} {stage.label}
                 </span>

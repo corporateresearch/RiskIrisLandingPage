@@ -12,7 +12,7 @@ export function SiteFooter() {
       <Container className="py-12 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr]">
           <div>
-            <Link href={routes.home} aria-label={`${site.name} home`} className="inline-block">
+            <Link href={routes.home} aria-label={`${site.name} home`} className="inline-flex min-h-11 items-center">
               <Wordmark />
             </Link>
             <address className="mt-5 text-xs not-italic leading-relaxed text-muted">
@@ -37,7 +37,7 @@ export function SiteFooter() {
           {footerNav.map((group) => (
             <nav key={group.title} aria-label={group.title}>
               <h2 className="text-sm">{group.title}</h2>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-2 lg:mt-4 lg:space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
                     {link.external ? (
@@ -45,13 +45,16 @@ export function SiteFooter() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-body hover:text-brand"
+                        className="inline-flex min-h-11 items-center text-sm text-body hover:text-brand lg:min-h-0"
                       >
                         {link.label}
                         <span className="sr-only"> (opens in a new tab)</span>
                       </a>
                     ) : (
-                      <Link href={link.href} className="text-sm text-body hover:text-brand">
+                      <Link
+                        href={link.href}
+                        className="inline-flex min-h-11 items-center text-sm text-body hover:text-brand lg:min-h-0"
+                      >
                         {link.label}
                       </Link>
                     )}
