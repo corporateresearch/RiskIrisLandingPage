@@ -72,6 +72,13 @@ public. Keep new copy within those limits.
 `src/content/penalties.ts` feeds the proof section. Every case must link to
 the regulator's own announcement. Do not add a case without one.
 
+## Design reference
+
+`DESIGN.md` in the project root is a design reference for people and AI
+agents working on the site. It describes another company's website and is
+used for mood and layout only; the note at the top of the file says what
+this project takes from it and what it overrides.
+
 ## Themes
 
 Light and dark, switched by the toggle in the header. The first visit
