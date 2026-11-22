@@ -1,7 +1,8 @@
 # Marketing site
 
 Multi-page marketing site with one goal: a qualified visitor books a demo.
-Built with Next.js (App Router), React and Tailwind CSS v4, with Motion for
+Built with Next.js (App Router), React and Tailwind CSS v4, with Three.js for
+the hero scene, Motion for
 animation and the Supabase client for demo requests.
 
 ## Getting started
@@ -57,10 +58,25 @@ supabase/                SQL for the demo_requests table
 ## Home page
 
 Five sections in a fixed order (problem, solution, benefits, proof, call to
-action) after the hero, each with its own animated scene in
-`src/components/scenes`. "Book a demo" appears in the header and in the
-closing section only. Each section ends with a "Next" shortcut; normal
-scrolling works throughout.
+action) after the hero. Each section fills one screen on a desktop and has
+its own scene in `src/components/scenes`. "Book a demo" appears in the
+header and in the closing section only. Each section ends with a "Next"
+shortcut; normal scrolling works throughout.
+
+The hero, problem and closing sections carry the `night` class and stay
+dark in both themes. The sections between them follow the visitor's theme.
+Every two-column section uses the same split, so the right-hand column
+starts on one line down the page.
+
+### The 3D hero
+
+`HeroRelief.tsx` turns a 2D image into a field of 3D blocks: one block per
+sampled pixel, its height taken from the pixel's brightness. The image is
+`public/media/relief-source.png`, set as `heroRelief` in `src/lib/site.ts`.
+Brighter pixels stand taller, and pure red pixels are drawn in the accent
+colour. Block colours come from the CSS tokens, so a palette change carries
+over. To change the figure, replace the image (112 x 112 pixels, greyscale
+on black). If WebGL is unavailable the image is shown as a flat grid.
 
 What the site deliberately does not publish: how the product works, the
 lists of languages, risk categories and sanctions sources, pricing, and any
@@ -71,6 +87,18 @@ public. Keep new copy within those limits.
 
 `src/content/penalties.ts` feeds the proof section. Every case must link to
 the regulator's own announcement. Do not add a case without one.
+
+## Product brief
+
+`PRODUCT.md` records the product facts and the limits on what the site may
+say. Read it before changing copy or adding a section.
+
+## Design reference
+
+`DESIGN.md` in the project root is a design reference for people and AI
+agents working on the site. It describes another company's website and is
+used for mood and layout only; the note at the top of the file says what
+this project takes from it and what it overrides.
 
 ## Themes
 

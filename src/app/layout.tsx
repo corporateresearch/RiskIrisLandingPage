@@ -6,11 +6,12 @@ import { SiteHeader } from "@/components/layout/SiteHeader"
 import { JsonLd } from "@/lib/JsonLd"
 import { socialMetadata } from "@/lib/metadata"
 import { absoluteUrl, counts, site } from "@/lib/site"
+import { themeColor } from "@/lib/theme"
 
-// Only the weights the design uses: headings 700; body 400, 500 and 600.
+// Only the weights the design uses: display 300, headings 600 and 700; body 400, 500 and 600.
 const heading = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["300", "600", "700"],
   variable: "--face-heading",
   display: "swap",
 })
@@ -46,6 +47,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: themeColor("canvas", "light") },
+    { media: "(prefers-color-scheme: dark)", color: themeColor("canvas", "dark") },
+  ],
 }
 
 const organization = {

@@ -19,7 +19,7 @@ function parse(block: string) {
 function load() {
   if (cache) return cache
   const css = readFileSync(join(process.cwd(), "src/app/globals.css"), "utf8")
-  const darkStart = css.indexOf('\n[data-theme="dark"] {')
+  const darkStart = css.indexOf('\n[data-theme="dark"]')
   const darkEnd = css.indexOf("}", darkStart)
   const light = parse(css.slice(0, darkStart))
   cache = { light, dark: { ...light, ...parse(css.slice(darkStart, darkEnd)) } }

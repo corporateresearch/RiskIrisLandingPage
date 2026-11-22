@@ -12,19 +12,21 @@ export function BrandEmblem({ onInk = false, className }: { onInk?: boolean; cla
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id={`shieldGrad-${onInk ? "ink" : "norm"}`} x1="16" y1="3" x2="16" y2="29" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id={`shieldGrad-${onInk ? "ink" : "norm"}`}
+          x1="16"
+          y1="3"
+          x2="16"
+          y2="29"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop offset="0%" stopColor={onInk ? "#dfeee7" : "#0f5c4a"} />
           <stop offset="100%" stopColor={onInk ? "#6fd3b0" : "#0a4436"} />
         </linearGradient>
       </defs>
 
       {/* Rounded container */}
-      <rect
-        width="32"
-        height="32"
-        rx="8"
-        className={onInk ? "fill-on-ink" : "fill-brand"}
-      />
+      <rect width="32" height="32" rx="8" className={onInk ? "fill-on-ink" : "fill-brand"} />
 
       {/* Shield outline */}
       <path
@@ -55,12 +57,7 @@ export function BrandEmblem({ onInk = false, className }: { onInk?: boolean; cla
       />
 
       {/* Center pupil */}
-      <circle
-        cx="16"
-        cy="16"
-        r="1.8"
-        className={onInk ? "fill-ink" : "fill-on-brand"}
-      />
+      <circle cx="16" cy="16" r="1.8" className={onInk ? "fill-ink" : "fill-on-brand"} />
     </svg>
   )
 }

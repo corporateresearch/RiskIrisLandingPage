@@ -1,7 +1,7 @@
 import { cn } from "./cn"
 
 const widths = {
-  default: "max-w-6xl",
+  default: "max-w-7xl",
   narrow: "max-w-3xl",
 } as const
 
